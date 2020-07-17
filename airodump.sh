@@ -1,15 +1,12 @@
 #Configuration:
-
-HANDSHAKE='/root/Handshakes/HandShake*.cap'
-WORDLIST='/usr/share/wordlists/rockyou.txt'
-MONITER=mon0
+MONITOR=mon0
 
 #End configuration
 
 echo " AIRODUMP AUTOMATER BY SAM LEWIS"
 echo " THIS ONE IS FOR YOUR BOBBY!"
-echo ""
-echo ""
+echo "DO NOT USE THIS ON NETWORKS THAT YOU DON'T OWN!"
+echo "I WILL NOT BE HELD LIABLE FOR ANY MISUSE OF THIS PRODUCT"
 echo "========Press enter to continue========"
 read START
 if [[ $START == "" ]]; then
@@ -27,7 +24,7 @@ read MONIF
 
 if [[ $MONIF == 'y' ]]; then
 echo ""
-iwconfig
+sudo iwconfig
 echo "Please select a wireless interface from above"
 echo ""
 read WIRELESS
@@ -36,7 +33,7 @@ sleep 2
 clear
 echo "Starting interface on $WIRELESS..."
 sleep 2
-airmon-ng start $WIRELESS
+sudo airmon-ng start $WIRELESS
 sleep 4
 clear
 else
@@ -55,7 +52,7 @@ if [[ $DUMP == 'y' ]]; then
 echo ""
 echo "Dumping network traffic...[Ctrl-C to stop]"
 sleep 4
-airodump-ng $WIRELESS"mon"
+sudo airodump-ng $WIRELESS"mon"
 else
 echo ""
 echo "Skipping..."
@@ -91,6 +88,6 @@ echo "Please enter the monitor device name:"
 echo ""
 read MON
 [[ $MON == "" ]]
-airodump-ng -c $CHNEL --bssid $BSSID -w /root/Desktop/ $MON
+sudo airodump-ng -c $CHNEL --bssid $BSSID -w ~/Desktop/ $MON
 fi
 echo "Happy Hacking!"
