@@ -25,3 +25,6 @@ Use:
 17. From there, you can crack however you'd like (password lists, crunch, hashcat, etc...)
 18. Happy Hacking!
 
+See Video below for reference. 
+
+[![](http://img.youtube.com/vi/fNs6obRE-UI/0.jpg)](http://www.youtube.com/watch?v=fNs6obRE-UI "AiroDump Automator")
